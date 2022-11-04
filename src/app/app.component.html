@@ -1,3 +1,7 @@
-<input (keyup)="changeName($event)" [value]="imageUrl"/>
-
+<input (keyup)="changeName($event)" [value]="imageUrl" style="width: 500px;"/>
+<br>
 <img [src]="imageUrl" alt="">
+<br>
+<app-post [img]="imageUrl" (imgSelected)="logImage($event)">
+  <h1>Post Component Content Projection</h1>
+</app-post>
