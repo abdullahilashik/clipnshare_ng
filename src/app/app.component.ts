@@ -20,7 +20,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Angular 14';
   imageUrl = 'https://picsum.photos/id/1/200/200';
-  name = 'n/a';
+  name:any = 'n/a';
 
   getName(){
     return this.title;
@@ -36,7 +36,7 @@ export class AppComponent {
   }
 
   changeName(e: KeyboardEvent){
-    console.log(e);
-    // this.name = e.target.value;
+    console.log((e.target as HTMLInputElement).value)
+    this.imageUrl = (e.target as HTMLInputElement).value;
   }
 }
